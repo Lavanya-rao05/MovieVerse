@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 # Load API keys from .env file
 OMDB_API_KEY = os.getenv("OMDB_API_KEY")
@@ -18,6 +18,10 @@ STREAMING_API_KEY = os.getenv("STREAMING_API_KEY")
 OMDB_URL = "http://www.omdbapi.com/"
 MOVIES_DB_URL = "https://moviesdatabase.p.rapidapi.com"
 STREAMING_URL = "https://streaming-availability.p.rapidapi.com"
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "Welcome to MovieVerse API!"})
 
 # Search for movies
 @app.route("/search", methods=["GET"])
