@@ -26,6 +26,13 @@ frontend/.next/
 frontend/dist/
 frontend/build/
 
+
+backend/node_modules/
+backend/.env.local
+backend/.next/
+backend/dist/
+backend/build/
+
 # Ignore package lock files
 yarn.lock
 pnpm-lock.yaml
