@@ -1,4 +1,4 @@
-# MovieVerse  
+# MovieVerse - Movie Recommendation website
 
 MovieVerse is a web app that lets users search for movies, view details, and check streaming availability.  
 
