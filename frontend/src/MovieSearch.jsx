@@ -24,6 +24,7 @@ const MovieSearch = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     if (query) handleSearch();
@@ -36,7 +37,7 @@ const MovieSearch = () => {
     }
 
     try {
-      const res = await axios.get(`http://127.0.0.1:5000/search`, {
+        const res = await axios.get(`${API_BASE_URL}/search`, {
         params: {
           query: query,
           genre: filters.genre || null,

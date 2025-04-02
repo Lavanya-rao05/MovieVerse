@@ -12,7 +12,7 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:5000/details/${movieId}`);
+        const res = await axios.get(`${API_BASE_URL}/details/${movieId}`);
         setMovie(res.data);
       } catch (error) {
         console.error("Error fetching movie details:", error);
@@ -21,9 +21,7 @@ const MovieDetails = () => {
 
     const fetchStreamingInfo = async () => {
       try {
-        const res = await axios.get(
-          `http://127.0.0.1:5000/streaming/${movieId}`
-        );
+        const res = await axios.get(`${API_BASE_URL}/streaming/${movieId}`);
         setStreaming(res.data);
       } catch (error) {
         console.error("Error fetching streaming info:", error);
